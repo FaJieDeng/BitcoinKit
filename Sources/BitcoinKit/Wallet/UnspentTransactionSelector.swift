@@ -34,9 +34,10 @@ public struct UnspentTransactionSelector {
         let dustValue: UInt64 = FeeCalculator.calculateDust(feePerByte: feePerByte)
 
         // if target value is dust, return empty array
-        guard targetValue >= dustValue else {
-            return []
-        }
+        //dengfajie去除此限制
+//        guard targetValue >= dustValue else {
+//            return []
+//        }
 
         // definitions for the following caluculation
         let doubleTargetValue: UInt64 = targetValue * 2
